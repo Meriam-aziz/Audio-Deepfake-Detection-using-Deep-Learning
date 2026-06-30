@@ -1,74 +1,113 @@
 # 🎙️ Audio Deepfake Detection using Deep Learning
 
-## 📌 Overview
-
-This project presents a Deep Learning approach for detecting fake audio using the **SceneFake** dataset. The system analyzes audio data, performs preprocessing, and classifies audio samples as **Real** or **Fake**, helping address challenges in digital forensics and audio authentication.
+A Deep Learning project for detecting manipulated (deepfake) audio using the **SceneFake dataset** and the **Audio Spectrogram Transformer (AST)** architecture built with **PyTorch** and **Hugging Face Transformers**.
 
 ---
 
-## 🎯 Objective
+## 📌 Overview
 
-The main objective of this project is to develop a deep learning model capable of distinguishing between genuine and manipulated audio recordings for forensic and cybersecurity applications.
+Audio deepfakes have become an emerging cybersecurity and digital forensics challenge due to recent advances in AI-generated speech synthesis.
+
+This project presents a transformer-based deep learning system capable of distinguishing between genuine and manipulated audio recordings using spectrogram representations extracted from the SceneFake dataset.
+
+The complete pipeline includes audio preprocessing, feature extraction, model training, evaluation, and performance analysis.
+
+---
+
+## 🚀 Features
+
+- Audio preprocessing
+- Spectrogram generation
+- Deep Learning-based audio classification
+- Transformer-based architecture (AST)
+- Multi-class audio classification
+- Model evaluation using multiple metrics
+- Digital Forensics application
 
 ---
 
 ## 📊 Dataset
 
-The project uses the **SceneFake** dataset, which contains audio samples labeled as:
+The project uses the **SceneFake** dataset containing four audio categories:
 
-- **Real Audio**
-- **Fake Audio**
+- Scene Real
+- Scene Fake
+- Voice Real
+- Voice Fake
 
-The dataset is divided into training, validation, and testing sets to evaluate the model's performance.
+The dataset is divided into:
 
----
-
-## ⚙️ Workflow
-
-1. Load the audio dataset.
-2. Perform data preprocessing.
-3. Explore the dataset using visualizations.
-4. Extract audio features.
-5. Train the Deep Learning model.
-6. Evaluate model performance.
-7. Classify audio samples as Real or Fake.
+- Training Set
+- Validation Set
+- Testing Set
 
 ---
 
-## 🤖 Model
+## 🧠 Model Architecture
 
-Deep Learning model for binary audio classification using the **SceneFake** dataset.
+The project utilizes the **Audio Spectrogram Transformer (AST)** from Hugging Face Transformers for audio classification.
+
+### Frameworks
+
+- PyTorch
+- Hugging Face Transformers
+- Torchaudio
+- Librosa
 
 ---
 
-## 📈 Evaluation Metrics
+## 📈 Model Performance
+
+**Best Validation Accuracy:** **98.44%**
+
+| Metric | Score |
+|---------|-------|
+| Accuracy | **98.44%** |
+| Precision | **98%** |
+| Recall | **98%** |
+| F1-Score | **98%** |
+
+The AST model achieved excellent classification performance across all four audio classes.
+
+---
+
+## 📷 Results
+
+### Number of Real and Fake Audios per Split and Version
+
+<p align="center">
+<img src="images/real_fake_split_version.png" width="750">
+</p>
+
+---
+
+### SceneFake Dataset Split Distribution
+
+<p align="center">
+<img src="images/scenefake_split_distribution.png" width="750">
+</p>
+
+---
+
+### Label Distribution
+
+<p align="center">
+<img src="images/label_distribution.png" width="650">
+</p>
+
+---
+
+## 📊 Evaluation
+
+The model was evaluated using:
 
 - Accuracy
 - Precision
 - Recall
-- F1-Score
+- F1-score
+- Classification Report
 
----
-
-## 🖼️ Results
-
-### Number of Real and Fake Audios per Split and Version
-
-![Real vs Fake Split](images/real_fake_split_version.png)
-
----
-
-### Number of Real and Fake Audios per Split in SceneFake Dataset
-
-![SceneFake Split Distribution](images/scenefake_split_distribution.png)
-
----
-
-### Label Distribution in SceneFake Dataset
-
-![Label Distribution](images/label_distribution.png)
-
-The exploratory analysis provides a clear understanding of the dataset distribution and class balance before training the deep learning model.
+The final model achieved outstanding performance with balanced precision and recall across all classes.
 
 ---
 
@@ -76,30 +115,19 @@ The exploratory analysis provides a clear understanding of the dataset distribut
 
 - Python
 - PyTorch
+- Hugging Face Transformers
+- AST (Audio Spectrogram Transformer)
+- Torchaudio
+- Librosa
 - NumPy
 - Pandas
 - Matplotlib
-- Librosa
 - Scikit-learn
 - Jupyter Notebook
 
 ---
 
-## ▶️ How to Run
-
-```bash
-git clone https://github.com/Meriam-aziz/Audio-Deepfake-Detection-using-Deep-Learning.git
-
-cd Audio-Deepfake-Detection-using-Deep-Learning
-
-pip install -r requirements.txt
-
-jupyter notebook "Forensic Science Project.ipynb"
-```
-
----
-
-## 📁 Project Structure
+## 📂 Project Structure
 
 ```text
 Audio-Deepfake-Detection-using-Deep-Learning/
@@ -116,13 +144,33 @@ Audio-Deepfake-Detection-using-Deep-Learning/
 
 ---
 
-## 🚀 Features
+## ⚙️ Installation
 
-- Audio preprocessing and analysis.
-- Exploratory Data Analysis (EDA).
-- Deep Learning-based audio classification.
-- Binary classification of Real vs Fake audio.
-- Visual analysis of dataset distribution.
+```bash
+git clone https://github.com/Meriam-aziz/Audio-Deepfake-Detection-using-Deep-Learning.git
+
+cd Audio-Deepfake-Detection-using-Deep-Learning
+
+pip install -r requirements.txt
+```
+
+---
+
+## ▶️ Run the Project
+
+```bash
+jupyter notebook "Forensic Science Project.ipynb"
+```
+
+---
+
+## 💡 Future Improvements
+
+- Support real-time audio deepfake detection
+- Fine-tune larger transformer models
+- Deploy the model using Streamlit or Flask
+- Extend the system to detect additional manipulated audio types
+- Export the model as an inference API
 
 ---
 
@@ -130,11 +178,6 @@ Audio-Deepfake-Detection-using-Deep-Learning/
 
 **Meriam Aziz**
 
----
+Artificial Intelligence Engineer
 
-## ⭐ Future Improvements
-
-- Improve model accuracy using advanced neural network architectures.
-- Support real-time fake audio detection.
-- Deploy the model as a web application using Streamlit or Flask.
-- Expand the system to detect multiple types of manipulated audio.
+If you found this project useful, don't forget to ⭐ the repository.
